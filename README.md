@@ -1,12 +1,18 @@
-# React + Vite
+# Velog Clone - Main Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+벨로그 메인페이지 클론 코딩 과제 프로젝트입니다.  
+React 기반으로 벨로그의 UI 및 기본 동작을 구현합니다.
 
-Currently, two official plugins are available:
+## 🛠️ 사용 기술
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- Vite
+- Styled-Components
 
-## Expanding the ESLint configuration
+## 📁 폴더 구조
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+src/
+├── components/ # 컴포넌트를 잘 활용해서 만들어주세용
+├── pages/ # HomePage.jsx 여기 있어요!
+├── assets/ # 일반적으로 이미지등을 여기 저장해서 사용합니다
+└── main.jsx # 라우팅 및 전체 구조
