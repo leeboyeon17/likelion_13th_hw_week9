@@ -15,19 +15,23 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: black;
   text-decoration: inherit;
 }
-a:hover {
+/*a:hover {
+  font-weight: 800;
   color: #535bf2;
-}
+}*/
 
 body {
   margin: 0;
   display: flex;
+  flex-direction: column;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgb(249, 249, 249);
+  overflow: scroll;
 }
 
 h1 {
@@ -47,11 +51,229 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  color: gray;
 }
-button:focus,
+/*button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}*/
+
+
+.container {
+  max-width: 1376px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+
+/****** Header ******/
+
+.Header_innerBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+}
+
+/* [Left] 로고 */
+.HeaderLogo_block a {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+/* [Right] 아이콘 + 로그인 */
+.Header_right {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.Header_right button {
+  height: 32px;
+  width: 80px;
+  border-radius: 100px;
+  background-color: #2b2b2b;
+  color: rgba(255, 255, 255, 0.87);
+  padding: 0;
+  font-weight: 600;
+}
+
+/****** Topnav ******/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+}
+
+nav div {
+  display: flex;
+  gap: 10px;
+}
+
+/* [Left] 리스트 */
+
+.topnav_list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topnav_list img {
+  width: 18px;
+  height: 18px;
+}
+
+.topnav_list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: gray;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 12px 8px;
+}
+
+.topnav_list a:hover {
+  font-weight: 800;
+  color: black;
+}
+
+/* [Right] 필터+더보기 */
+
+.Topnav_right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Topnav_right button {
+  padding: 0;
+}
+
+.HomeTab_selector {
+  background: #ffffff;
+  height: 32px;
+  width: 100px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 10px;
+  font-weight: 600;
+  color: var(--text2);
+  font-size: 14px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.HomeTab_selector button {
+  padding: 0;
+}
+
+/****** Postcards ******/
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 24px 0;
+  max-width: 1376px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/***반응형 UI 구현***/
+/* 화면이 1024px 이하이면 post 2개 */
+@media (max-width: 1024px) {
+  .postsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* 화면이 768px 이하이면 post 1개 */
+@media (max-width: 768px) {
+  .postsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.postcard {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 376.9px;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.25s ease-in, transform 0.25s ease-in;
+}
+.postcard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.postcard_image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.postcard_content {
+  padding: 1rem;
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+}
+
+.postcard_title {
+  font-size: 18px;
+  margin: 0 0 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  cursor: pointer;
+}
+
+.postcard_summary {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  cursor: pointer;
+}
+
+.postcard_subInfo {
+  font-size: 12px;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.postcard_footer {
+  padding: 0.625rem 1rem;
+  border-top: 1px solid #ddd;
+  display: flex;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  justify-content: space-between;
+}
+.postcard_userInfo {
+  cursor: pointer;
 }
 
 @media (prefers-color-scheme: light) {
@@ -59,9 +281,9 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
+  /*  a:hover {
     color: #747bff;
-  }
+  }*/
   button {
     background-color: #f9f9f9;
   }
