@@ -53,11 +53,10 @@ button {
 button:hover {
   color: gray;
 }
-/*button:focus,
+button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}*/
-
+}
 
 .container {
   max-width: 1376px;
@@ -65,7 +64,6 @@ button:focus-visible {
   margin: 0 auto;
   padding: 20px 0;
 }
-
 
 /****** Header ******/
 
@@ -119,18 +117,18 @@ nav div {
 
 /* [Left] 리스트 */
 
-.topnav_list {
+.HomeTab_left {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.topnav_list img {
+.HomeTab_left img {
   width: 18px;
   height: 18px;
 }
 
-.topnav_list a {
+.HomeTab_left a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -142,27 +140,23 @@ nav div {
   padding: 12px 8px;
 }
 
-.topnav_list a:hover {
+.HomeTab_left a:hover {
   font-weight: 800;
   color: black;
 }
 
 /* [Right] 필터+더보기 */
 
-.Topnav_right {
+.HomeTab_right {
+  position: relative; /*js 구현 시 드롭다운 위치 때문에 필요할듯*/
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.Topnav_right button {
-  padding: 0;
 }
 
 .HomeTab_selector {
+  cursor: pointer;
   background: #ffffff;
   height: 32px;
-  width: 100px;
+
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -171,13 +165,16 @@ nav div {
   padding-right: 8px;
   margin-right: 10px;
   font-weight: 600;
-  color: var(--text2);
+  color: #495057;
   font-size: 14px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
-.HomeTab_selector button {
-  padding: 0;
+.HomeTab_extra {
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #868e96;
 }
 
 /****** Postcards ******/
